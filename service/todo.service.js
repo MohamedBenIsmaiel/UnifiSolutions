@@ -40,6 +40,13 @@ function deleteTodo(TodoModel) {
     }
 }
 
+function getTodos(TodoModel) {
+
+    return async function () {
+        return TodoModel.find()
+    }
+}
+
 
 
 module.exports = {
@@ -47,4 +54,5 @@ module.exports = {
     getSpecificTodo,
     updateTodo,
     deleteTodo,
+    getTodos,
 }

@@ -48,6 +48,16 @@ class TodoController {
             next(err)
         }
     }
+
+    async getTodos(req, res, next) {
+        try {
+            const result = await todoService.getTodos()
+            res.json(result);
+        } catch (err) {
+            next(err)
+        }
+    }
+
 }
 
 module.exports = TodoController;
