@@ -38,6 +38,16 @@ class TodoController {
             next(err)
         }
     }
+
+    async deleteTodo(req, res, next) {
+        try {
+            const { id: todoId } = req.params;
+            const result = await todoService.deleteTodo({ todoId })
+            result ? res.json(result) : res.status(404).json({ error: `todo with id ${todoId} not found ` })
+        } catch (err) {
+            next(err)
+        }
+    }
 }
 
 module.exports = TodoController;

@@ -33,6 +33,12 @@ function updateTodo(TodoModel) {
     }
 }
 
+function deleteTodo(TodoModel) {
+
+    return async function ({ todoId }) {
+        return TodoModel.findByIdAndRemove(todoId)
+    }
+}
 
 
 
@@ -40,4 +46,5 @@ module.exports = {
     createTodo,
     getSpecificTodo,
     updateTodo,
+    deleteTodo,
 }
