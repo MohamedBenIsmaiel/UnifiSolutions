@@ -13,6 +13,13 @@ class TodoController{
         const result = await todoService.getSpecificTodo({todoId})
         result ? res.json(result) : res.status(404).json({error : `todo with id ${todoId} not found `})
     }
+
+    async updateTodo(req, res){
+        const {id: todoId} = req.params;
+        const { title, description, completed } = req.body;
+        const result = await todoService.updateTodo({todoId, title, description, completed})
+        res.json(result);
+    }
 }
 
 module.exports = TodoController;
