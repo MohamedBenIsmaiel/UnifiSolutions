@@ -1,4 +1,11 @@
-const { createTodo, getSpecificTodo, updateTodo, deleteTodo } = require('./todo.service');
+const { 
+    createTodo, 
+    getSpecificTodo, 
+    updateTodo, 
+    deleteTodo,
+    getTodos,
+} = require('./todo.service');
+
 const TodoModel = require('../database/models/todo.model.')
 
 module.exports = {
@@ -6,4 +13,5 @@ module.exports = {
     getSpecificTodo: getSpecificTodo(TodoModel),
     updateTodo: updateTodo(TodoModel),
     deleteTodo: deleteTodo(TodoModel),
+    getTodos: getTodos(TodoModel),
 }
