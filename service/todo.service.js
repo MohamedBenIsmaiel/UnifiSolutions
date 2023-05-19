@@ -10,7 +10,15 @@ function createTodo(TodoModel) {
     }
 }
 
+function getSpecificTodo(TodoModel) {
+
+    return async function ({ todoId }) {
+        return TodoModel.findById(todoId)
+    }
+}
+
 
 module.exports = {
     createTodo,
+    getSpecificTodo,
 }
