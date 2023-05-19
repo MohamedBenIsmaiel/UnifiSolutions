@@ -27,7 +27,7 @@ function updateTodo(TodoModel) {
         }, { new: true });
 
         if (!updatedTodo) {
-            throw new Error(`todo with id ${todoId} not found !`)
+            return {msg:`todo with id ${todoId} not found !`, status: 404}
         }
         return updatedTodo;
     }
