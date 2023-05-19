@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 function ConnectToMongodb() {
-    mongoose.connect('mongodb://localhost/todo-app', {
+    const mongoUrl = `mongodb://admin:adminpassword@localhost:27017/todo-app?authSource=admin`
+    mongoose.connect(mongoUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

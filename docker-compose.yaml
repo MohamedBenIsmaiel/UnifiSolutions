@@ -2,6 +2,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo
+    env_file: ./.env
     container_name: mongodb
     ports:
       - '27017:27017'
