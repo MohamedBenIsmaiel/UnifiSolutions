@@ -29,4 +29,4 @@ async function seed() {
     return TodoModel.create(todos);
 }
 
-seed().then(res => console.log('Seed data has been successful ')).catch(err => console.log('Something going wrong ', err))
+seed().then(res => {console.log('Seed data has been successful ');}).catch(err => console.log('Something going wrong ', err))
